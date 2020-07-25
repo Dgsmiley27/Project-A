@@ -1,5 +1,5 @@
 /**
- * O Comando "botinfo"mostrará informações do bot
+ * O Comando "botinfo" mostrará informações do bot
  */
 
 const Discord = require('discord.js')
@@ -14,14 +14,14 @@ module.exports = {
     const botAvatar = client.user.displayAvatarURL
     const date = client.user.createdAt
     const userName = client.user.username
-    const servsize = client.guilds.size
-    const usersize = client.users.size
+    const servsize = client.guilds.cache.size
+    const usersize = client.users.cache.size
     const status = {
       online: '`🟢` Online',
       offline: '`⚫` Offline'
     }
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setColor(client.displayHexColor === '#000000' ? '#ffffff' : client.displayHexColor)
       .setThumbnail(botAvatar)
       .setAuthor('🤖 Minhas informações')
